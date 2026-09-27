@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>?????</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Cinzel:wght@500;700&family=Space+Grotesk:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- SCENE 1: the sealed envelope -->
+<section id="scene-envelope" aria-label="A sealed envelope">
+  <div class="grain"></div>
+  <p class="whisper">someone left this for you.</p>
+
+  <div class="envelope-rig">
+    <div class="env-shadow"></div>
+    <div class="env-body">
+      <div class="env-flap-back"></div>
+      <div class="env-string"></div>
+      <button id="seal-btn" class="env-seal" aria-label="Break the seal and open the envelope">
+        <svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="18"/><path class="eye" d="M8 20c4-6 8-9 12-9s8 3 12 9c-4 6-8 9-12 9s-8-3-12-9z" fill="none" stroke="#1a1830" stroke-width="1.4"/><circle cx="20" cy="20" r="3.4" fill="#1a1830"/></svg>
+      </button>
+      <div class="env-flap-front"></div>
+    </div>
+  </div>
+
+  <p class="hint">press the seal, if you dare</p>
+  <button id="skip-intro" class="skip-link" type="button">skip intro →</button>
+</section>
+
+<!-- SCENE 2: the invitation, hidden inside -->
+<section id="scene-invite" aria-hidden="true">
+  <div class="stars"></div>
+  <div class="invite-card">
+    <p class="invite-eyebrow">an invitation — not for everyone</p>
+    <h1 class="invite-title">You have been<br>chosen to enter<br><em>Ritika's world.</em></h1>
+    <p class="invite-body">Once you accept, there is no quiet exit. You'll be pulled straight into the game.</p>
+    <div class="invite-actions">
+      <button id="btn-decline" class="btn btn-ghost" type="button">decline</button>
+      <button id="btn-accept" class="btn btn-solid" type="button">accept</button>
+    </div>
+    <p id="decline-msg" class="decline-msg" aria-live="polite"></p>
+  </div>
+</section>
+
+<!-- SCENE 3: trapped in the game gate -->
+<section id="scene-gate" aria-hidden="true">
+  <div class="gate-grid"></div>
+  <div class="gate-box">
+    <span class="gate-deco a">★</span><span class="gate-deco b">◆</span><span class="gate-deco c">✦</span>
+    <p class="gate-sub">— you accepted —</p>
+    <h2 class="gate-title">WELCOME.<br>THERE IS NO<br>EXIT BUTTON.</h2>
+    <div class="gate-btns">
+      <button class="gate-btn" id="btn-menu" type="button">MENU</button>
+      <button class="gate-btn primary" id="btn-start" type="button">START</button>
+      <button class="gate-btn" id="btn-exit" type="button">EXIT</button>
+    </div>
+    <p id="exit-msg" class="exit-msg" aria-live="polite"></p>
+  </div>
+</section>
+
+<!-- SCENE 4: the actual portfolio -->
+<main id="portfolio" aria-hidden="true">
+  <nav class="top"><div class="wrap">
+    <span class="mark">RK_</span>
+    <div><a href="#work">work</a><a href="#skills">skills</a><a href="#contact">contact</a></div>
+  </div></nav>
+
+  <div class="wrap">
+    <section class="hero">
+      <p class="kicker">PLAYER LOADED://RITIKA</p>
+      <h1 class="hero-title">Building the <em>models</em><br>behind the magic.</h1>
+      <p class="lede">B.Tech CSE (AIML) student at Ajay Kumar Garg Engineering College, turning classical ML and RAG pipelines into working products — from workout planners to GNSS-denied navigation.</p>
+      <div class="stats">
+        <div><b>8.75</b><span>SGPA</span></div>
+        <div><b>92%</b><span>BodySync model accuracy</span></div>
+        <div><b>2028</b><span>graduating</span></div>
+      </div>
+    </section>
+
+    <section id="work">
+      <h2 class="h-title">Projects</h2>
+
+      <div class="proj">
+        <div class="row"><h3>BodySync — Workout &amp; Diet Planner</h3><span class="tag">flagship</span></div>
+        <p>An end-to-end personalized 7-day workout and diet planner, built with a team. A tuned Random Forest classifies workout type at 92% test accuracy (0.92 weighted F1), a regression model predicts macronutrients at R² = 0.9235, and a 7-day diet optimizer uses exhaustive dish-combination search plus L-BFGS-B to hit calorie and macro targets. Deployed as Flask REST APIs with input validation and feature preprocessing.</p>
+        <div class="stack"><span>Python</span><span>Random Forest</span><span>Flask</span><span>scikit-learn</span><span>L-BFGS-B</span></div>
+      </div>
+
+      <div class="proj">
+        <div class="row"><h3>College Campus Chatbot</h3><span class="tag">RAG-based AI assistant</span></div>
+        <p>A retrieval-augmented chatbot for campus queries — Gemini embeddings and cosine-similarity retrieval pull the relevant campus info before Gemini generates a context-restricted answer, cutting down unsupported responses. Built FastAPI endpoints for Q&amp;A plus an admin interface to add campus info and track unanswered queries.</p>
+        <div class="stack"><span>FastAPI</span><span>Gemini API</span><span>Embeddings</span><span>RAG</span></div>
+      </div>
+
+      <div class="proj">
+        <div class="row"><h3>BioTrace — eDNA Species Classifier</h3><span class="tag">Build with Bharat</span></div>
+        <p>An end-to-end ML pipeline for amphibian species classification from environmental DNA — FASTA sequences transformed into k-mer feature vectors, feeding a K-Nearest Neighbors classifier that hits 90.34% accuracy. Built as an automated species-ID component for biodiversity assessment and conservation research.</p>
+        <div class="stack"><span>Python</span><span>KNN</span><span>Pandas</span><span>k-mer features</span></div>
+      </div>
+
+      <div class="proj">
+        <div class="row"><h3>Dead Reckoning for GNSS-Denied Navigation</h3><span class="tag">ongoing</span></div>
+        <p>An LSTM model that predicts vehicle position from smartphone IMU data (accelerometer + gyroscope) during GPS outages. Preprocessed the 51K+ sample IO-VNBD benchmark with gravity compensation and local Cartesian displacement targets, and trained on GPU via Apple Metal — cutting trajectory drift from 55.16% to 5.99%.</p>
+        <div class="stack"><span>TensorFlow</span><span>LSTM</span><span>NumPy</span><span>Pandas</span></div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2 class="h-title">Skills &amp; achievements</h2>
+      <div class="skills-grid">
+        <div class="skill-card"><h4>ML &amp; STATS</h4><p>Linear/Logistic Regression, Random Forest, KNN, Decision Trees, XGBoost, Gradient Descent, Neural Networks.</p></div>
+        <div class="skill-card"><h4>GEN AI</h4><p>Gemini API, embeddings, and retrieval-augmented generation (RAG) pipelines.</p></div>
+        <div class="skill-card"><h4>ENGINEERING</h4><p>Python, C++, Pandas, NumPy, scikit-learn, PyTorch, Flask &amp; FastAPI REST APIs, Git.</p></div>
+        <div class="skill-card"><h4>HACKATHONS</h4><p>Top 5 at DevCation Hack 'N' Solve (TigerGraph Track, vulnerability detection); Build With Bharat (eDNA classification); ET AI Hackathon 2.0 (KrishiMitra, offline crop disease &amp; market-price advisor).</p></div>
+      </div>
+    </section>
+  </div>
+
+  <footer id="contact">
+    <h2>Let's build something.</h2>
+    <p>Open to internships, collaborations and hackathon teams.</p>
+    <div class="contact-links">
+      <a href="mailto:ritikakatta24@gmail.com">Email</a>
+      <a href="https://github.com/ritikakatta24-beep" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://linkedin.com/ritika-katta" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </footer>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
