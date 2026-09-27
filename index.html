@@ -21,7 +21,11 @@
       <div class="env-flap-back"></div>
       <div class="env-string"></div>
       <button id="seal-btn" class="env-seal" aria-label="Break the seal and open the envelope">
-        <svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="18"/><path class="eye" d="M8 20c4-6 8-9 12-9s8 3 12 9c-4 6-8 9-12 9s-8-3-12-9z" fill="none" stroke="#1a1830" stroke-width="1.4"/><circle cx="20" cy="20" r="3.4" fill="#1a1830"/></svg>
+        <svg viewBox="0 0 44 44">
+          <circle cx="22" cy="22" r="20" class="seal-ring"/>
+          <circle cx="22" cy="22" r="20" class="seal-dots"/>
+          <text x="22" y="29" class="seal-letter" text-anchor="middle">R</text>
+        </svg>
       </button>
       <div class="env-flap-front"></div>
     </div>
@@ -56,9 +60,23 @@
     <div class="gate-btns">
       <button class="gate-btn" id="btn-menu" type="button">MENU</button>
       <button class="gate-btn primary" id="btn-start" type="button">START</button>
-      <button class="gate-btn" id="btn-exit" type="button">EXIT</button>
     </div>
     <p id="exit-msg" class="exit-msg" aria-live="polite"></p>
+  </div>
+</section>
+
+<!-- SCENE 3b: the mini game, unlocked by START -->
+<section id="scene-game" aria-hidden="true">
+  <div class="gate-grid"></div>
+  <div class="game-hud">
+    <span id="game-score">SCORE 0</span>
+    <span id="game-time">15s</span>
+  </div>
+  <div id="game-field"></div>
+  <div id="game-end" class="game-end" hidden>
+    <p class="gate-sub">— nice reflexes —</p>
+    <h2 class="gate-title" id="game-end-title">RUN COMPLETE</h2>
+    <button class="gate-btn primary" id="btn-continue" type="button">ENTER PORTFOLIO</button>
   </div>
 </section>
 
@@ -124,7 +142,7 @@
     <h2>Let's build something.</h2>
     <p>Open to internships, collaborations and hackathon teams.</p>
     <div class="contact-links">
-      <a href="mailto:ritikakatta24@gmail.com">Email</a>
+      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=ritikakatta24@gmail.com" target="_blank" rel="noopener">Email</a>
       <a href="https://github.com/ritikakatta24-beep" target="_blank" rel="noopener">GitHub</a>
       <a href="https://linkedin.com/ritika-katta" target="_blank" rel="noopener">LinkedIn</a>
     </div>
